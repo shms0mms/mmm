@@ -7,6 +7,7 @@ from sqlalchemy import ForeignKey, String
 
 class Transaction(Base):
 	__tablename__ = 'transaction'
+	id: Mapped[int] = mapped_column(autoincrement=True, primary_key=True)
 	from_account_number: Mapped[str] = mapped_column(String(length=16))
 	to_account_number: Mapped[str] = mapped_column(String(length=16))
 	amount: Mapped[float] = mapped_column(nullable=False)
